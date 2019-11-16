@@ -1,0 +1,45 @@
+import java.util.Scanner;
+	import java.util.Stack;
+
+public class balanced {
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the string");
+		String str=sc.next();
+		int count=0;
+		Stack<Character> str1=new Stack<>();
+        
+		for(int i=0;i<str.length();i++)
+		{
+			if((str.charAt(i)=='{') || (str.charAt(i)=='[') ||(str.charAt(i)=='('))
+			{
+				str1.push(str.charAt(i));
+			}
+			if((str.charAt(i)=='}') || (str.charAt(i)==']') ||(str.charAt(i)==')'))
+			{
+				count=1;
+			 if((str.charAt(i)==')') && (str1.peek()=='('))
+				{
+					str1.pop();
+				}
+			else if((str.charAt(i)==']') && (str1.peek()=='['))
+				{
+					str1.pop();
+				}
+			else if((str.charAt(i)=='}') && (str1.peek()=='{'))
+				{
+					str1.pop();
+				}
+			}		
+		}
+			if(str1.isEmpty())
+			{
+				System.out.println("Balanced");
+			}
+			if(!str1.isEmpty())
+			{
+				System.out.println("Unbalanced");
+			}
+	}
+}
