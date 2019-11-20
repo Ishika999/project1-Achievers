@@ -24,7 +24,7 @@ public class DuplicateElements {
 					}
 			}
 			if(count>0)
-			System.out.println(arr[i]+" comes: "+count);
+			System.out.println(arr[i]+" comes: "+count+" times");
 		}
 	}
 }
