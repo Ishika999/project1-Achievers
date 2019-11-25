@@ -1,0 +1,39 @@
+package infix;
+import java.util.Scanner;
+import java.util.Stack;
+
+public class prefixToPostfix {
+
+  public static void main(String args[])
+  {
+	  Scanner sc=new Scanner(System.in);
+	  System.out.println("Enter String");
+	  String str=sc.next();
+	  Stack st=new Stack();
+	   int n=str.length();
+	  for(int i=n-1;i>=0;i--)
+	  {
+		  char c=str.charAt(i); 
+         
+		  if(c=='/'|| c=='*'|| c=='+'|| c=='-')
+		  {
+			  String str1=(String) st.peek();
+			 st.pop();
+			  String str2=(String) st.peek();
+			  st.pop();
+			  String str3=str1+str2+str.charAt(i);
+			  st.push(str3);
+		  }
+		  else
+		  {
+			  st.push(c+"");
+		  }
+	  }
+	  for(int i=0;i<st.size();i++)
+	  {
+		  System.out.println(st.pop());
+	  }
+  }
+}
+
+
