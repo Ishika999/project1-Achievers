@@ -1,0 +1,53 @@
+package practice;
+import java.util.*;
+
+public class duplicate_remove {
+
+		public static void main(String args[])
+		{
+			Scanner sc=new Scanner(System.in);
+			
+			System.out.println("Enter string");
+			
+			String str=sc.next();
+			
+		    String s ="";
+		    
+		    int j;
+		    
+		    if(str.charAt(0)!=str.charAt(1))
+		    {
+		    	s=s+str.charAt(0);
+		    }
+		    
+		    for( j=1;j<str.length()-1;j++)
+		    {
+		    	
+		    	if(str.charAt(j)!=str.charAt(j-1) && str.charAt(j)!=str.charAt(j+1))
+		    		
+		    	{
+		    	
+		    		s=s+str.charAt(j);
+		
+		    	}
+		 
+		    }
+		    
+		    if(str.charAt(j)!=str.charAt(j-1))
+		    {
+		    	s=s+str.charAt(j);
+		   
+		    }
+		    System.out.println("String after removing the duplicate characters is:"+  s);
+		    
+		  
+			
+		}
+	}
+
+
+
+
+
+
+
